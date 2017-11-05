@@ -1,6 +1,8 @@
 import React from 'react' 
 import PropTypes from 'prop-types' 
 
+import {getCurrentWeather, getForeCast} from '../utils/api'
+
 export default class WeatherForm extends React.Component {
     constructor(props){
         super(props)
@@ -33,6 +35,8 @@ export default class WeatherForm extends React.Component {
 
     submitWeatherForm(){
         console.log('form', this.state.place)
+        //getCurrentWeather(this.state.place).then((data)=> console.log('data', data))
+        getForeCast(this.state.place).then((data)=> console.log('data', data))
     }
 
     updateWeatherForm(e){

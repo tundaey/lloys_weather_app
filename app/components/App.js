@@ -28,7 +28,7 @@ export default class App extends React.Component {
            <div style={{width: "100%", height: "100%"}}>
                 <Nav/>
                 <div className="home-container container is-fullhd" style={{backgroundImage: "url('app/images/download.svg')"}}>
-                    <h1 className="title home-title">Enter City and State</h1>
+                    <h1 className="title home-title">Enter City or a Place</h1>
                     <WeatherForm
                      direction="column"
                      onSubmitWeatherForm = {function(){}}
