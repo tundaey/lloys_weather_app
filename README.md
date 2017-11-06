@@ -2,6 +2,10 @@
 
 Technical Test developed in ReactJs
 
+# Demo
+
+A demo of the project can be found here - https://weather-app-f2bae.firebaseapp.com/
+
 ## Getting Started
 
 Clone or download the project from this repository
