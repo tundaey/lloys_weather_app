@@ -7,6 +7,7 @@ import * as queryString from 'query-string';
 function DayForeCast(props){
     const date = getDate(props.day.dt);
     const icon = props.day.weather[0].icon
+    var img = require(`../images/icons/${icon}.svg`)
 
     function onClick(){
         props.onClick(props.day)
@@ -14,7 +15,7 @@ function DayForeCast(props){
 
     return (
         <div onClick={onClick} className='day-container'>
-            <img className='weather' src={'./app/images/icons/' + icon + '.svg'} alt='Weather' />
+            <img className='weather' src={img} alt='Weather' />
             <h2 className='subheader'>{date}</h2>
         </div>
     )

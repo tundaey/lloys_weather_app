@@ -1,6 +1,6 @@
 # Weather App
 
-Technical Test assignment developed in ReactJs
+Technical Test developed in ReactJs
 
 ## Getting Started
 
@@ -25,4 +25,16 @@ Run the npm script below to run the project
 ```
 npm run start
 ```
+
+To build the project for production run the script below
+
+```
+npm run build
+```
+If running on an operating system other than windows change the build command to 
+
+```
+NODE_ENV = 'production' && webpack -p
+```
+
 

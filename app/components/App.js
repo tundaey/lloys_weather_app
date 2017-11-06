@@ -12,7 +12,7 @@ export default class App extends React.Component {
 
     render () {
         return (                
-            <div className="home-container is-fullhd" style={{backgroundImage: "url('app/images/download.svg')"}}>
+            <div className="home-container is-fullhd">
                 <h1 className="title home-title">Enter City or a Place</h1>
                 <WeatherForm
                     direction="column"

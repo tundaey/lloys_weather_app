@@ -28,11 +28,12 @@ export default class Day extends React.Component {
     }
 
     render () {
+        let img
         return this.state.loading === true
         ? <div>Loading</div>
         :<div>
             <div className='day-container'>
-                <img className='weather' src={'/app/images/icons/' + this.state.data.weather[0].icon + '.svg'} alt='Weather' />
+                <img className='weather' src={img = require(`../images/icons/${this.state.data.weather[0].icon}.svg`)} alt='Weather' />
                 <h2 className='subheader'>{getDate(this.state.data.dt)}</h2>
             </div>
             <div className='description-container'>
