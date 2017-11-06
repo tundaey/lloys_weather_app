@@ -2,22 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types' 
 import WeatherForm from './WeatherForm'
 
+import {Link} from 'react-router-dom'
+
 export function Nav (props) {
     return (
         <nav className="navbar is-transparent">
             <div className="navbar-brand">
-                <a className="navbar-item" href="https://bulma.io">
-                    <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma" width="112" height="28" />
-                </a>
+                <Link to="/" className="navbar-item">
+                    <img src={'./app/images/d13.svg'} alt="Bulma" />
+                </Link>
             </div>
-            <div className="navbar-end">
-                <div className="navbar-item">
-                    <WeatherForm
-                        direction="row"
-                        onSubmitWeatherForm = {function(){}}
-                        onUpdateWeatherForm= {function(){}} />
-                </div>
-           </div>
       </nav>
     )
 }

@@ -7,8 +7,13 @@ import * as queryString from 'query-string';
 function DayForeCast(props){
     const date = getDate(props.day.dt);
     const icon = props.day.weather[0].icon
+
+    function onClick(){
+        props.onClick(props.day)
+    }
+
     return (
-        <div className='day-container'>
+        <div onClick={onClick} className='day-container'>
             <img className='weather' src={'./app/images/icons/' + icon + '.svg'} alt='Weather' />
             <h2 className='subheader'>{date}</h2>
         </div>
@@ -24,6 +29,7 @@ export default class Forecast extends React.Component {
         }
 
         this.fetchForecast = this.fetchForecast.bind(this)
+        this.goToDayWeather = this.goToDayWeather.bind(this)
     }
 
     componentDidMount(){
@@ -42,13 +48,16 @@ export default class Forecast extends React.Component {
         : <div>
             <h1 className='forecast-header'>{this.place}</h1>
             <div className="forecast-container">
-                {this.state.data.list.map((day)=> <DayForeCast key={day.dt} day={day}/>)}
+                {this.state.data.list.map((day)=> <DayForeCast key={day.dt} day={day} onClick={this.goToDayWeather}/>)}
             </div>
         </div>
     }
 
-    goToDayWeather(){
-        
+    goToDayWeather(day){
+        this.props.history.push({
+            pathname: '/day/' + this.place + '/' + day.dt,
+            state: {place: this.place, day: day}
+        })
     }
 
     fetchForecast(place){
@@ -59,7 +68,6 @@ export default class Forecast extends React.Component {
         })
 
         getForeCast(place).then((data)=> {
-            console.log('data', data);
             this.setState(function(){
                 return {
                     loading: false,

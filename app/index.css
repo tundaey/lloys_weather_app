@@ -59,6 +59,7 @@ html {
     margin: 50px auto;
   }
   .day-container {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,3 +80,15 @@ html {
   .weather {
     height: 130px;
   }
+
+  .description-container {
+    font-size: 34px;
+    font-weight: 100;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.navbar-item img {
+  max-height: 3.75rem;
+}

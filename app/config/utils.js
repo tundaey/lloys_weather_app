@@ -24,7 +24,8 @@ const days = {
   };
 
   export function convertTemperature(k){
-      return (k - 273.15) * 1.8000 + 32.00
+      let degreeValue = (k - 273.15) * 1.8000 + 32.00
+      return degreeValue.toFixed(2)
   }
 
   export function getDate(timestamp){
