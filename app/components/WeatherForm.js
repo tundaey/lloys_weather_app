@@ -1,5 +1,6 @@
 import React from 'react' 
 import PropTypes from 'prop-types' 
+import {Link} from 'react-router-dom' 
 
 import {getCurrentWeather, getForeCast} from '../utils/api'
 
@@ -26,7 +27,7 @@ export default class WeatherForm extends React.Component {
                          placeholder="Birmingham, West Midlands"/>
                     </p>
                     <p className="control">
-                        <button onClick={this.submitWeatherForm} className="button is-info">Get Weather</button>
+                        <button onClick={this.submitWeatherForm} className="button is-info">Get Weather</button>                        
                     </p>
                 </div>
             </div>
@@ -34,9 +35,7 @@ export default class WeatherForm extends React.Component {
     }
 
     submitWeatherForm(){
-        console.log('form', this.state.place)
-        //getCurrentWeather(this.state.place).then((data)=> console.log('data', data))
-        getForeCast(this.state.place).then((data)=> console.log('data', data))
+        this.props.onSubmitWeatherForm(this.state.place)
     }
 
     updateWeatherForm(e){
