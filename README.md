@@ -1,6 +1,6 @@
-# Frontend-assignment
+# Weather App
 
-Code assignment developed in ReactJs
+Technical Test assignment developed in ReactJs
 
 ## Getting Started
 
