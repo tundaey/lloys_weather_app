@@ -37,4 +37,10 @@ If running on an operating system other than windows change the build command to
 NODE_ENV = 'production' && webpack -p
 ```
 
+# What Could have been done with more time
+
+I could have written some unit tests for some test cases with more time
+
+
+
 
