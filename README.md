@@ -45,6 +45,14 @@ NODE_ENV = 'production' && webpack -p
 
 I could have written some unit tests for some test cases with more time
 
+### Test the project
+
+Run the npm script below to run the tests in the test folder
+
+```
+npm run test
+```
+
 
 
 
