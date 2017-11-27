@@ -5,7 +5,11 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var config = {
     entry: './app/index.js',
-
+    externals: {
+      'cheerio': 'window',
+      'react/lib/ExecutionEnvironment': true,
+      'react/lib/ReactContext': true,
+    },
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'index_bundle.js',

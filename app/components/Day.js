@@ -5,6 +5,12 @@ import {DayForeCast} from './Forecast'
 import {getCurrentWeather} from '../utils/api'
 import {convertTemperature, getDate} from '../config/utils'
 
+function Loading(){
+    return (
+        <div>Loading</div>
+    )
+}
+
 export default class Day extends React.Component {
     constructor(props){
         super(props);
@@ -30,7 +36,7 @@ export default class Day extends React.Component {
     render () {
         let img
         return this.state.loading === true
-        ? <div>Loading</div>
+        ? <Loading/>
         :<div>
             <div className='day-container'>
                 <img className='weather' src={img = require(`../images/icons/${this.state.data.weather[0].icon}.svg`)} alt='Weather' />
@@ -47,7 +53,6 @@ export default class Day extends React.Component {
 
     fetchWeather(place){
         getCurrentWeather(place).then((data)=> {
-            console.log('data', data)
             this.setState(function(){
                 return {
                     loading: false,

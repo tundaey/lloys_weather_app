@@ -11,7 +11,7 @@ function formatQueryString(queryString){
 }
 
 function formatURL(type, queryString){
-    console.log('query string', queryString)
+    //console.log('query string', queryString)
     return URL + type + '?' + formatQueryString(queryString)
 }
 
@@ -27,7 +27,7 @@ function getQueryString(place){
 export function getCurrentWeather(place){
     let queryString = getQueryString(place)
     let url = formatURL('weather', queryString)
-    console.log('url', url)
+    //console.log('url', url)
     return axios.get(url).then((currentWeather)=> currentWeather.data)
 }
 
